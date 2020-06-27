@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "Poppins", sans-serif;
+}
+.container{
+	max-width: 1170px;
+	margin: 0 auto;
+}
+header{
+	background-color: #292D3E;
+}
+header:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.brand-name{
+	width: 20%;
+	float: left;
+}
+.brand-name a {
+	font-size: 25px;
+	font-weight: 700;
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	display: block;
+	padding: 6px 0;
+}
+nav{
+	width: 80%;
+	float: left;
+}
+nav ul{
+	list-style: none;
+	float: right;
+}
+
+nav ul li{
+	display: inline-block;
+	position: relative;
+}
+nav ul li:last-child a{
+	padding-right: 0px;
+}
+nav ul li a{
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	display: block;
+	padding: 13px 15px;
+}
+nav ul ul{
+	width: 200px;
+	position: absolute;
+	background-color: red;
+	top: 100px;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.5s ease;
+}
+nav ul li:hover > ul{
+	top:50px;
+	opacity: 1;
+	visibility: visible;
+}
+nav ul ul::before {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 16px solid #f90000;
+	top: -16px;
+	left: 23px;
+}
+
+header .toggle{
+	color: #fff;
+    font-size: 21px;
+    padding-top: 11px;
+    cursor: pointer;
+    display: none;
+}
+
+
+@media all and (max-width: 768px){
+	header .toggle{
+		display: block;
+		float: right;
+		padding-right: 30px;
+	}
+	header .brand-name{
+		padding-left: 30px;
+	}
+	header nav{
+		width: 100%;
+	}
+	header nav ul{
+		display: none;
+		float: none;
+		background-color: green;
+	}
+	header ul li{
+		display: block;
+	}
+	header nav ul ul{
+		top: 0px;
+		position: static;
+		visibility: visible;
+		opacity: 1;
+		display: none;
+	}
+	header nav ul ul::before{
+		display: none;
+	}
+	
+}
